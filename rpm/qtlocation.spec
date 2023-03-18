@@ -10,13 +10,6 @@ License: LGPLv2 with exceptions or GPLv3 with exceptions
 Url:     http://www.qt.io
 Source0: %{name}-%{version}.tar.bz2
 
-# build failure with gcc10
-# various C++ runtime headers indirectly included <string> which in turn
-# included <local> and <cerrno>.  Those indirect inclusions have been
-# eliminated which in turn forces packages to include the C++ headers they
-# actually need.
-Patch0: qtlocation-gcc10.patch
-
 # filter plugin/qml provides
 %global __provides_exclude_from ^(%{_opt_qt5_archdatadir}/qml/.*\\.so|%{_opt_qt5_plugindir}/.*\\.so)$
 
