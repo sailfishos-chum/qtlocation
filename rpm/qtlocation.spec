@@ -47,7 +47,6 @@ Requires: opt-qt5-qtbase-devel%{?_isa}
 
 %prep
 %autosetup -n %{name}-%{version}/upstream -p1
-%patch0 -p1 -b .gcc10
 
 %build
 export QTDIR=%{_opt_qt5_prefix}
