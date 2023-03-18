@@ -84,6 +84,7 @@ popd
 %{_opt_qt5_libdir}/libQt5Positioning.so.5*
 %dir %{_opt_qt5_archdatadir}/qml/QtPositioning
 %{_opt_qt5_archdatadir}/qml/QtPositioning/*
+%{_opt_qt5_qmldir}/Qt/labs/location/*
 %{_opt_qt5_plugindir}/position/
 %{_opt_qt5_libdir}/libQt5PositioningQuick.so.5*
 
