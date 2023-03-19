@@ -44,6 +44,24 @@ Requires: opt-qt5-qtbase-devel%{?_isa}
 %description devel
 %{summary}.
 
+%package pos-geoclue
+Summary: Qt Location Positioning Plugin: geoclue
+Requires: %{name}%{?_isa} = %{version}-%{release}
+%description pos-geoclue
+%{summary}.
+
+%package pos-geoclue2
+Summary: Qt Location Positioning Plugin: geoclue2
+Requires: %{name}%{?_isa} = %{version}-%{release}
+%description pos-geoclue2
+%{summary}.
+
+%package pos-positionpoll
+Summary: Qt Location Positioning Plugin: positionpoll
+Requires: %{name}%{?_isa} = %{version}-%{release}
+%description pos-positionpoll
+%{summary}.
+
 
 %prep
 %autosetup -n %{name}-%{version}/upstream -p1
@@ -85,8 +103,17 @@ popd
 %dir %{_opt_qt5_archdatadir}/qml/QtPositioning
 %{_opt_qt5_archdatadir}/qml/QtPositioning/*
 %{_opt_qt5_qmldir}/Qt/labs/location/*
-%{_opt_qt5_plugindir}/position/
+%dir %{_opt_qt5_plugindir}/position
 %{_opt_qt5_libdir}/libQt5PositioningQuick.so.5*
+
+%files pos-geoclue
+%{_opt_qt5_plugindir}/position/libqtposition_geoclue.so
+
+%files pos-geoclue2
+%{_opt_qt5_plugindir}/position/libqtposition_geoclue2.so
+
+%files pos-positionpoll
+%{_opt_qt5_plugindir}/position/libqtposition_positionpoll.so
 
 %files devel
 %{_opt_qt5_headerdir}/QtLocation/
