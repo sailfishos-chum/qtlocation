@@ -19,6 +19,7 @@ Patch0: qtlocation-gcc10.patch
 
 # filter plugin/qml provides
 %global __provides_exclude_from ^(%{_opt_qt5_archdatadir}/qml/.*\\.so|%{_opt_qt5_plugindir}/.*\\.so)$
+%{?opt_qt5_default_filter}
 
 BuildRequires: make
 BuildRequires: opt-qt5-qtbase-devel >= %{qt_version}
@@ -31,6 +32,9 @@ BuildRequires: pkgconfig(zlib)
 BuildRequires: pkgconfig(icu-i18n)
 BuildRequires: pkgconfig(libssl)
 BuildRequires: pkgconfig(libcrypto)
+
+Requires: opt-qt5-qtbase-gui >= %{qt_version}
+Requires: opt-qt5-qtdeclarative >= %{qt_version}
 
 %description
 The Qt Location and Qt Positioning APIs gives developers the ability to
